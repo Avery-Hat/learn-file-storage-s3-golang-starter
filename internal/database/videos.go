@@ -137,8 +137,8 @@ func (c Client) UpdateVideo(video Video) error {
 		query,
 		video.Title,
 		video.Description,
-		&video.ThumbnailURL,
-		&video.VideoURL,
+		video.ThumbnailURL, // <-- FIX: no &
+		video.VideoURL,     // <-- FIX: no &
 		video.UserID,
 		video.ID,
 	)
